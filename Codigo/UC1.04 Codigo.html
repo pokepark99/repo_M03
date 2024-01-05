@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gere Check-in and Check-out</title>
+
+<script>
+/* Gere uma string capcha*/ 
+        function generarCaptcha() {
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var captcha = '';
+            for (var i = 0; i < 6; i++) {
+                captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return captcha;
+        }
+
+	function AtualizarCaptcha() {
+            var captchaText = generarCaptcha();
+            var canvas = document.getElementById('captcha-canvas');
+            var ctx = canvas.getContext('2d');
+            
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            /*desenha a capcha*/
+            ctx.font = '30px Arial';
+            ctx.fillText(captchaText, 10, 30);
+        }
+        
+    /*faz a capcha aparecer mal o programa corre*/
+    window.onload = function () {
+            AtualizarCaptcha();
+        };
+
+    </script>
+
+</head>
+<body>
+
+<fieldset>
+        
+	<div class = "check in and out">
+    	<div class = "opcao">
+        	<input type = "radio" id = "check-in" name="IN-OutCheck" value = "CheckIN">
+            <label for = "check-in">Check-in</label>
+            
+      <div class="option">
+              <input type="radio" id="check-out" name="IN-OutCheck" value="CheckOut">
+              <label for="check-out">Check-out</label>
+      </div>
+	</div>
+</fieldset>
+
+<fieldset>
+
+<label for="utilizador">Nome Utilizador:</label>
+<input type="text" id="utilizador" required><br>
+
+<label for="password">Password:</label>
+<input type="text" id="password" required><br>
+
+<label for="motivo">Motivo: (opcional)</label>
+<input type="text" id="motivo"><br>
+
+<label for="captcha">Captcha:</label>
+    <canvas id="captcha-canvas" width="150" height="40"></canvas>
+    <button type="button" onclick="AtualizarCaptcha()">Atualizar Captcha</button><br>
+    <input type="text" id="captcha" name="captcha" pattern="[A-Za-z0-9]{6}" required>
+    
+</fieldset>
+
+</body>
+</html>
