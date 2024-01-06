@@ -26,39 +26,77 @@
         text-indent: 20px; 
         font-weight: bold;
     }
-    
+   
 </style>
+
+<script>
+
+window.onload = function () {
+            informacao();
+        };
+
+function informacao() {
+            var candidatura = document.getElementById("candidatura");
+            
+            if (candidatura.value === "a") {
+                nomeCompleto.value = "Mariana Silva";
+                numeroEstudante.value = "20211";
+                contacto.value = "986284738";
+                email.value = "MarSiana@gmail.com";
+                preferencias.value = "";
+                quarto.value = "Triplo"
+            } else if (candidatura.value === "b") {
+                nomeCompleto.value = "Mariana Silva";
+                numeroEstudante.value = "20211";
+                contacto.value = "986284738";
+                email.value = "MarSiana@gmail.com";
+                preferencias.value = "";
+                quarto.value = "Individual"
+            } else if (candidatura.value === "c") {
+                nomeCompleto.value = "Mariana Silva";
+                numeroEstudante.value = "20211";
+                contacto.value = "983527244";
+                email.value = "MarSiana@gmail.com";
+                preferencias.value = "";
+                quarto.value = "Duplo"
+                
+            }
+        }
+        
+    
+</script>
+
 </head>
 <body>
 
 <label for="candidatura">Candidatura:</label>
-    <select id="candidatura" name="candidatura" required>
+    <select id="candidatura" name="candidatura" required onchange="informacao()">
         <option value="a">Candidatura 2021/22</option>
         <option value="b">Candidatura 2022/23</option>
         <option value="c">Candidatura 2023/24</option>
     </select>
-
+   
 <br> 
 
 <p class = "indented-and-bold"> Informação:
 
 <p class = "indented"> <label for = "nomeCompleto">Nome Completo:</label>
-    <input type = "text" id="nomeCompleto" name = "nomeCompleto" required>
+    <input type = "text" id="nomeCompleto" name = "nomeCompleto">
 
 <p class = "indented"> <label for = "numeroEstudante">Número de Estudante:</label>
-    <input type="text" id="numeroEstudante" name="numeroEstudante" required>
+    <input type="text" id="numeroEstudante" name="numeroEstudante">
     
 <p class = "indented"> <label for = "contacto">Contacto:</label>
-    <input type="tel" id="contacto" name="contacto" required>
+    <input type="tel" id="contacto" name="contacto">
     
 <p class = "indented"> <label for = "email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <input type="email" id="email" name="email">
     
 <p class = "indented"> <label  for = "preferencias">Preferências Adicionais:</label> <br>
     <textarea id="preferencias" name="preferencias"></textarea>
     
-<p class = "indented"> <label for = "email">Tipo Quarto:</label>
-    <input type="quarto" id="quarto" name="quarto" required> <br>
+<p class = "indented"> <label for = "quarto">Tipo Quarto:</label>
+    <input type="quarto" id="quarto" name="quarto"> <br>
 
 <p class = "indented_2"> <button type="button" style="background-color: #578cff; color: white">PAGAMENTOS</button>
 
