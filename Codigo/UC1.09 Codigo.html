@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faz pagamentos mensais</title>
+
+</head>
+
+<style>
+	.indented {
+        padding-left: 40px; 
+    }
+    
+    .indented_2 {
+        padding-left: 80px; 
+    }
+    
+    .hidden {
+    display: none;
+	}
+    
+</style>
+
+
+<script>
+
+window.onload = function () {
+            pagamentos();
+        };
+
+	function pagamentos(){
+    	var selectedPayment = document.getElementById("pagamento").value;
+        var paypalFields = document.getElementById("paypalFields");
+            var visaFields = document.getElementById("visaFields");
+            
+
+	paypalFields.classList.add("hidden");
+	visaFields.classList.add("hidden");
+    
+    if (selectedPayment === "paypal") {  paypalFields.classList.remove("hidden");
+    } else if (selectedPayment === "visa") {   visaFields.classList.remove("hidden");
+            } 
+
+    }
+    
+    function validacao() {
+            var selectedPayment = document.getElementById("pagamento").value;
+            var paypalFields = document.getElementById("paypalFields");
+            var visaFields = document.getElementById("visaFields");
+
+            if (selectedPayment === "paypal") {
+                var nomeTitularPaypal = document.getElementById("nomeTitularPaypal").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var pagamento = document.getElementById("pagamento").value;
+
+                if (!nomeTitularPaypal || !email || !password) {
+                    alert("Por favor, preencha todos os campos.");
+                    return false;
+                }
+            } else if (selectedPayment === "visa") {
+                var nomeTitularVisa = document.getElementById("nomeTitularVisa").value;
+                var numeroCartao = document.getElementById("numeroCartao").value;
+                var dataValidade = document.getElementById("dataValidade").value;
+                var cvv = document.getElementById("cvv").value;
+
+                if (!nomeTitularVisa || !numeroCartao || !dataValidade || !cvv) {
+                    alert("Por favor, preencha todos os campos");
+                    return false;
+                }
+            } 
+            return true; 
+        }
+
+</script>
+
+<body>
+
+<form onsubmit="return validacao()">
+
+<label for="mes">Mês:</label>
+    <select id="mes" name="mes" required>
+        <option value="a">Setembro</option>
+        <option value="b">Outubro</option>
+        <option value="c">Novembro</option>
+        <option value="d">Dezembro</option>
+        <option value="e">Janeiro</option>
+        <option value="f">Fevereiro</option>
+        <option value="g">Março</option>
+        <option value="h">Abril</option>
+        <option value="i">Maio</option>
+        <option value="j">Junho</option>
+    </select> <br> 
+
+<p class = "indented"> Montante: 120€ <br> <br> 
+
+<label for="pagamento">Pagamento:</label>
+    <select id="pagamento" name="pagamento" onchange="pagamentos()" required>
+        <option value="reembolso">Contra Reembolso</option>
+        <option value="paypal">Paypal</option>
+        <option value="visa">VISA</option>
+        <option value="multibanco">Multibanco</option>
+    </select> <br> 
+ 
+ <p class="indented_2" id="paypalFields" class="hidden">
+        <label for="nomeTitular">Nome do titular:</label> <br>
+        <input type="text" id="nomeTitular" name="nomeTitular" required><br>
+
+        <label for="numeroCartao">Endereço E-mail:</label><br>
+        <input type="text" id="email" name="email" required><br>
+
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password" required><br>
+    </p>
+ 
+<p class="indented_2" id="visaFields" class="hidden">
+        <label for="nomeTitular">Nome do titular:</label> <br>
+        <input type="text" id="nomeTitular" name="nomeTitular" required><br>
+
+        <label for="numeroCartao">Número do cartão:</label><br>
+        <input type="text" id="numeroCartao" name="numeroCartao" required><br>
+
+        <label for="dataValidade">Data de validade do cartão:</label><br>
+        <input type="text" id="dataValidade" name="dataValidade" required><br>
+
+        <label for="cvv">CVV:</label><br>
+        <input type="text" id="cvv" name="cvv" required><br>
+    </p>
+
+<p class = "indented_2"> <button type="submit" style="background-color: #578cff; color: white" onclick = "mults()">Fazer Pagamento</button>
+
+</body>
+</html>
