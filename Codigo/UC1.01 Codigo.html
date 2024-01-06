@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulta detalhes da candidatura</title>
+
+<style>
+    fieldset {
+        margin-bottom: 10px;
+    }
+
+    label, input, button {
+        margin-bottom: 10px;
+    }
+    
+    .indented {
+        padding-left: 40px; 
+    }
+    
+    .indented_2 {
+        padding-left: 300px; 
+    }
+    
+    .indented-and-bold {
+        text-indent: 20px; 
+        font-weight: bold;
+    }
+    
+</style>
+</head>
+<body>
+
+<label for="candidatura">Candidatura:</label>
+    <select id="candidatura" name="candidatura" required>
+        <option value="a">Candidatura 2021/22</option>
+        <option value="b">Candidatura 2022/23</option>
+        <option value="c">Candidatura 2023/24</option>
+    </select>
+
+<br> 
+
+<p class = "indented-and-bold"> Informação:
+
+<p class = "indented"> <label for = "nomeCompleto">Nome Completo:</label>
+    <input type = "text" id="nomeCompleto" name = "nomeCompleto" required>
+
+<p class = "indented"> <label for = "numeroEstudante">Número de Estudante:</label>
+    <input type="text" id="numeroEstudante" name="numeroEstudante" required>
+    
+<p class = "indented"> <label for = "contacto">Contacto:</label>
+    <input type="tel" id="contacto" name="contacto" required>
+    
+<p class = "indented"> <label for = "email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+<p class = "indented"> <label  for = "preferencias">Preferências Adicionais:</label> <br>
+    <textarea id="preferencias" name="preferencias"></textarea>
+    
+<p class = "indented"> <label for = "email">Tipo Quarto:</label>
+    <input type="quarto" id="quarto" name="quarto" required> <br>
+
+<p class = "indented_2"> <button type="button" style="background-color: #578cff; color: white">PAGAMENTOS</button>
+
+</body>
+</html>
