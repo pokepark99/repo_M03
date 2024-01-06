@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consulta detalhes da candidatura</title>
+    <title>Consulta detalhes da candidatura</title>
 
-<style>
-    fieldset {
-        margin-bottom: 10px;
-    }
+    <style>
+        fieldset {
+            margin-bottom: 10px;
+        }
 
-    label, input, button {
-        margin-bottom: 10px;
-    }
-    
-    .indented {
-        padding-left: 40px; 
-    }
-    
-    .indented_2 {
-        padding-left: 300px; 
-    }
-    
-    .indented-and-bold {
-        text-indent: 20px; 
-        font-weight: bold;
-    }
-   
-</style>
+        label, input, button {
+            margin-bottom: 10px;
+        }
 
-<script>
+        .indented {
+            padding-left: 40px; 
+        }
 
-window.onload = function () {
+        .indented_2 {
+            padding-left: 300px; 
+        }
+
+        .indented-and-bold {
+            text-indent: 20px; 
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
             informacao();
         };
 
-function informacao() {
+        function informacao() {
             var candidatura = document.getElementById("candidatura");
-            
+
             if (candidatura.value === "a") {
                 nomeCompleto.value = "Mariana Silva";
                 numeroEstudante.value = "20211";
@@ -59,46 +57,69 @@ function informacao() {
                 email.value = "MarSiana@gmail.com";
                 preferencias.value = "";
                 quarto.value = "Duplo"
-                
             }
         }
-        
-    
-</script>
 
+        function mostrarPagamentos() {
+            var listaPagamentos = document.getElementById("listaPagamentos");
+            var candidatura = document.getElementById("candidatura").value;
+            var mesesPagos = [];
+            var valorPago = 70;
+            var listaHTML = "<ul>";
+
+            if (candidatura === "a") {
+                mesesPagos = ["Setembro", "Outubro", "Novembro", "Dezembro", "Janeiro", "Fevereiro", "Março"];
+            } else if (candidatura === "b") {
+                mesesPagos = ["Setembro", "Outubro", "Novembro", "Dezembro", "Janeiro"];
+            } else if (candidatura === "c") {
+                mesesPagos = ["Setembro", "Outubro", "Novembro", "Dezembro", "Janeiro", "Fevereiro"];
+            }
+
+            for (var i = 0; i < mesesPagos.length; i++) {
+                listaHTML += "<li>" + mesesPagos[i] + " - Pago (€" + valorPago + ")</li>";
+            }
+
+            listaHTML += "</ul>";
+            listaPagamentos.innerHTML = listaHTML;
+        }
+    </script>
 </head>
 <body>
 
-<label for="candidatura">Candidatura:</label>
+    <label for="candidatura">Candidatura:</label>
     <select id="candidatura" name="candidatura" required onchange="informacao()">
-        <option value="a">Candidatura 2021/22</option>
-        <option value="b">Candidatura 2022/23</option>
-        <option value="c">Candidatura 2023/24</option>
+        <option value="a">2021/2022</option>
+        <option value="b">2022/2023</option>
+        <option value="c">2023/2024</option>
     </select>
-   
-<br> 
 
-<p class = "indented-and-bold"> Informação:
+    <br>
 
-<p class = "indented"> <label for = "nomeCompleto">Nome Completo:</label>
-    <input type = "text" id="nomeCompleto" name = "nomeCompleto">
+    <p class="indented-and-bold"> Informação:</p>
 
-<p class = "indented"> <label for = "numeroEstudante">Número de Estudante:</label>
-    <input type="text" id="numeroEstudante" name="numeroEstudante">
-    
-<p class = "indented"> <label for = "contacto">Contacto:</label>
-    <input type="tel" id="contacto" name="contacto">
-    
-<p class = "indented"> <label for = "email">Email:</label>
-    <input type="email" id="email" name="email">
-    
-<p class = "indented"> <label  for = "preferencias">Preferências Adicionais:</label> <br>
-    <textarea id="preferencias" name="preferencias"></textarea>
-    
-<p class = "indented"> <label for = "quarto">Tipo Quarto:</label>
-    <input type="quarto" id="quarto" name="quarto"> <br>
+    <p class="indented"> <label for="nomeCompleto">Nome Completo:</label>
+        <input type="text" id="nomeCompleto" name="nomeCompleto">
 
-<p class = "indented_2"> <button type="button" style="background-color: #578cff; color: white">PAGAMENTOS</button>
+    <p class="indented"> <label for="numeroEstudante">Número de Estudante:</label>
+        <input type="text" id="numeroEstudante" name="numeroEstudante">
+
+    <p class="indented"> <label for="contacto">Contacto:</label>
+        <input type="tel" id="contacto" name="contacto">
+
+    <p class="indented"> <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+    <p class="indented"> <label for="preferencias">Preferências Adicionais:</label> <br>
+        <textarea id="preferencias" name="preferencias"></textarea>
+
+    <p class="indented"> <label for="quarto">Tipo Quarto:</label>
+        <input type="text" id="quarto" name="quarto"> <br>
+
+    <p class="indented_2">
+        <button type="button" style="background-color: #578cff; color: white" onclick="mostrarPagamentos()">PAGAMENTOS</button>
+    </p>
+
+    <div id="listaPagamentos"></div>
 
 </body>
 </html>
