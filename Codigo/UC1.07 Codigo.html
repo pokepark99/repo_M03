@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Estadia</title>
+
+    <style>
+        label, input, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="#" method="post">
+    <label for="nomeCompleto">Nome Completo:</label>
+    <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+
+    <label for="numeroEstudante">Número de Estudante:</label>
+    <input type="text" id="numeroEstudante" name="numeroEstudante" required>
+
+    <label for="contacto">Contacto:</label>
+    <input type="tel" id="contacto" name="contacto" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="preferencias">Preferências Adicionais:</label>
+    <textarea id="preferencias" name="preferencias"></textarea>
+
+    <label for="tipoQuarto">Tipo de Quarto:</label>
+    <select id="tipoQuarto" name="tipoQuarto" required>
+        <option value="individual">Individual</option>
+        <option value="duplo">Duplo</option>
+        <option value="triplo">Triplo</option>
+        <option value="adaptado">Adaptado</option>
+    </select>
+
+    <label for="tipoPagamento">Tipo de Pagamento:</label>
+    <select id="tipoPagamento" name="tipoPagamento" required>
+        <option value="reembolso">Contra Reembolso</option>
+        <option value="paypal">Paypal</option>
+        <option value="visa">VISA/ Cartão Bancário</option>
+        <option value="multibanco">Multibanco</option>
+    </select>
+
+    <label for="dataInicio">Data de Início da Estadia:</label>
+    <input type="date" id="dataInicio" name="dataInicio" required>
+
+    <label for="dataFim">Data de Fim da Estadia:</label>
+    <input type="date" id="dataFim" name="dataFim" required>
+
+    <button type="submit">Enviar Pedido</button>
+</form>
+
+</body>
+</html>
