@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Quartos e Ocupantes</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Lista de Quartos e Ocupantes</h2>
+
+<table>
+    <tr>
+        <th>Quarto</th>
+        <th>Ocupante</th>
+        <th>Contato</th>
+        <th>Tipo de Quarto</th>
+        <th>Disponibilidade</th>
+    </tr>
+    <tr>
+        <td>Quarto 1</td>
+        <td>Alice Johnson</td>
+        <td><a href="mailto:alice@example.com">alice@example.com</a></td>
+        <td>Individual</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 2</td>
+        <td>Bob Smith</td>
+        <td><a href="mailto:bob@example.com">bob@example.com</a></td>
+        <td>Duplo</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 3</td>
+        <td>Charlie Brown</td>
+        <td><a href="mailto:charlie@example.com">charlie@example.com</a></td>
+        <td>Triplo</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 4</td>
+        <td>Diana Miller</td>
+        <td><a href="mailto:diana@example.com">diana@example.com</a></td>
+        <td>Individual</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 5</td>
+        <td>Ethan Davis</td>
+        <td><a href="mailto:ethan@example.com">ethan@example.com</a></td>
+        <td>Duplo</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 6</td>
+        <td>Fiona Wilson</td>
+        <td><a href="mailto:fiona@example.com">fiona@example.com</a></td>
+        <td>Triplo</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 7</td>
+        <td>George Taylor</td>
+        <td><a href="mailto:george@example.com">george@example.com</a></td>
+        <td>Individual</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 8</td>
+        <td>Hannah White</td>
+        <td><a href="mailto:hannah@example.com">hannah@example.com</a></td>
+        <td>Duplo</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 9</td>
+        <td>Ian Johnson</td>
+        <td><a href="mailto:ian@example.com">ian@example.com</a></td>
+        <td>Triplo</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quarto 10</td>
+        <td>Jessica Brown</td>
+        <td><a href="mailto:jessica@example.com">jessica@example.com</a></td>
+        <td>Individual</td>
+        <td>
+            <select>
+                <option value="ocupado">Ocupado</option>
+                <option value="disponivel">Disponível</option>
+            </select>
+        </td>
+    </tr>
+    <!-- Adicionando a nova linha para Quarto 11 -->
+    <tr>
+        <td>Quarto 11</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <select>
+                <option value="disponivel">Disponível</option>
+                <option value="ocupado">Ocupado</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<!-- Botão para atualizar disponibilidade -->
+<button onclick="atualizarDisponibilidade()">Atualizar Disponibilidade</button>
+
+<script>
+    function atualizarDisponibilidade() {
+        // Lógica para atualizar a disponibilidade
+        alert("Disponibilidade atualizada com sucesso!");
+    }
+</script>
+
+</body>
+</html>
