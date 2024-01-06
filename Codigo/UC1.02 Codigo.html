@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Pedidos</title>
+
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select, button {
+            margin-top: 10px;
+        }
+
+        #informacoesDetalhadas {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <label for="statusPedido">Status do Pedido:</label>
+    <select id="statusPedido" name="statusPedido">
+        <option value="pendentes" selected>Pedidos Pendentes</option>
+        <option value="aprovados">Pedidos Aprovados</option>
+        <option value="recusados">Pedidos Recusados</option>
+    </select>
+</div>
+
+<div>
+    <h2>Lista de Pedidos Pendentes</h2>
+    <ul>
+        <li>
+            <span>Nome: João Silva</span>
+            <button onclick="verMaisInformacoes('João Silva', '123456')">Ver Mais</button>
+            <button onclick="aprovarPedido('João Silva')">Aprovar Pedido</button>
+        </li>
+        <li>
+            <span>Nome: Maria Santos</span>
+            <button onclick="verMaisInformacoes('Maria Santos', '654321')">Ver Mais</button>
+            <button onclick="aprovarPedido('Maria Santos')">Aprovar Pedido</button>
+        </li>
+        <li>
+            <span>Nome: Carlos Oliveira</span>
+            <button onclick="verMaisInformacoes('Carlos Oliveira', '987654')">Ver Mais</button>
+            <button onclick="aprovarPedido('Carlos Oliveira')">Aprovar Pedido</button>
+        </li>
+        <li>
+            <span>Nome: Ana Pereira</span>
+            <button onclick="verMaisInformacoes('Ana Pereira', '456789')">Ver Mais</button>
+            <button onclick="aprovarPedido('Ana Pereira')">Aprovar Pedido</button>
+        </li>
+        <li>
+            <span>Nome: Luís Mendes</span>
+            <button onclick="verMaisInformacoes('Luís Mendes', '159753')">Ver Mais</button>
+            <button onclick="aprovarPedido('Luís Mendes')">Aprovar Pedido</button>
+        </li>
+        <li>
+            <span>Nome: Sofia Costa</span>
+            <button onclick="verMaisInformacoes('Sofia Costa', '753951')">Ver Mais</button>
+            <button onclick="aprovarPedido('Sofia Costa')">Aprovar Pedido</button>
+        </li>
+        <li>
+            <span>Nome: Pedro Rocha</span>
+            <button onclick="verMaisInformacoes('Pedro Rocha', '852369')">Ver Mais</button>
+            <button onclick="aprovarPedido('Pedro Rocha')">Aprovar Pedido</button>
+        </li>
+    </ul>
+</div>
+
+<div id="informacoesDetalhadas">
+    <h2>Informações Detalhadas</h2>
+    <p><strong>Nome:</strong> <span id="detalheNome"></span></p>
+    <p><strong>Número de Estudante:</strong> <span id="detalheNumeroEstudante"></span></p>
+</div>
+
+<script>
+    function verMaisInformacoes(nome, numeroEstudante) {
+        // Atualize o conteúdo das informações detalhadas
+        document.getElementById("detalheNome").innerText = nome;
+        document.getElementById("detalheNumeroEstudante").innerText = "Número de Estudante: " + numeroEstudante;
+
+        // Exiba as informações detalhadas
+        document.getElementById("informacoesDetalhadas").style.display = "block";
+    }
+
+    function aprovarPedido(nome) {
+        alert("Pedido de " + nome + " aprovado!");
+        // Adicione a lógica para aprovar o pedido aqui
+    }
+</script>
+
+</body>
+</html>
