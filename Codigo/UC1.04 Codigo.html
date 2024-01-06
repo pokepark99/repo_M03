@@ -56,6 +56,8 @@
             var utilizador = document.getElementById('utilizador').value;
             var password = document.getElementById('password').value;
             var captcha = document.getElementById('captcha').value;
+            var captchaCanvas = document.getElementById('captcha-canvas');
+            var captchaError = document.getElementById('captcha-error');
             
             document.getElementById('check-error').style.display = 'none';
             document.getElementById('utilizador-error').style.display = 'none';
@@ -65,24 +67,33 @@
             
             
      if (!checkIn && !checkOut) {
-                document.getElementById('check-error').style.display = 'block';
-                return false;
-            }
+            document.getElementById('check-error').style.display = 'block';
+            return false;
+        }
 
-            if (utilizador === '') {
-                document.getElementById('utilizador-error').style.display = 'block';
-                return false;
-            }
+        if (utilizador === '') {
+            document.getElementById('utilizador-error').style.display = 'block';
+            return false;
+        }
 
-            if (password === '') {
-                document.getElementById('password-error').style.display = 'block';
-                return false;
-            }
+        if (password === '') {
+            document.getElementById('password-error').style.display = 'block';
+            return false;
+        }
 
-            if (captcha === '') {
-                document.getElementById('captcha-error').style.display = 'block';
-                return false;
-            }
+        if (captcha === '') {
+            document.getElementById('captcha-error').style.display = 'block';
+            return false;
+        }
+
+        if (captcha !== captchaCanvas.innerText) {
+            document.getElementById('captcha-error').innerText = 'Código captcha incorreto. Tente novamente.';
+            
+            captchaError.style.display = 'block';
+            document.getElementById('captcha').value = '';
+            AtualizarCaptcha();
+            return false;
+        }
 
             return true;       
     }
@@ -129,7 +140,7 @@
 
     <br>
 
-    <button type="button" onclick="requirementos()" style="background-color: #578cff; color: white">CONFIRM</button>
+    <button type="submit" onclick="requirementos()" style="background-color: #578cff; color: white">CONFIRM</button>
 
 </fieldset>
 
