@@ -100,3 +100,53 @@
     }
 
 </script>
+
+</head>
+<body>
+
+<fieldset>
+        
+	<div class="check-in-out">
+        <div class="opcao">
+            <input type="radio" id="check-in" name="IN-OutCheck" value="CheckIN">
+            <label for="check-in">Check-in</label>
+
+            <div class="option">
+                <input type="radio" id="check-out" name="IN-OutCheck" value="CheckOut">
+                <label for="check-out">Check-out</label>
+            </div>
+        </div>
+        <div id="check-error" class="error-message">Por favor, selecione Check-in ou Check-out.</div>
+    </div>
+</fieldset>
+
+<fieldset>
+
+<label for="utilizador">Nome Utilizador:</label>
+    <input type="text" id="utilizador" required>
+    <div id="utilizador-error" class="error-message">Por favor, insira o nome do utilizador.</div> <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <div id="password-error" class="error-message">Por favor, insira a password.</div> <br>
+
+    <label for="motivo">Motivo: (opcional)</label>
+    <input type="text" id="motivo"> <br>
+
+    <label for="captcha">Captcha:</label>
+    <canvas id="captcha-canvas" width="150" height="40"></canvas> <br>
+    <input type="text" id="captcha" name="captcha" pattern="[A-Za-z0-9]{6}" required>
+    <button type="button" onclick="AtualizarCaptcha()">Atualizar Captcha</button>
+    <div id="captcha-error" class="error-message">Por favor, insira o código captcha.</div>
+
+    <br> <br>
+    
+    <label for="dataInicio">Data para Check-in/Check-out:</label>
+    <input type="date" id="dataCheck" name="dataCheck" required> <br>
+
+    <button type="submit" onclick="requirementos()" style="background-color: #578cff; color: white">CONFIRM</button>
+
+</fieldset>
+
+</body>
+</html> 
